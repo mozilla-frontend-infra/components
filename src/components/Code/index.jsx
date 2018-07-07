@@ -17,7 +17,7 @@ const validLanguage = (props, propName) => {
 export default class Code extends Component {
   static propTypes = {
     /**
-     * The content to render as syntax highlighted.
+     * The content to render as highlighted syntax.
      */
     children: string.isRequired,
     /**

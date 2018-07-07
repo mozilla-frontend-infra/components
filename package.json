@@ -1,8 +1,8 @@
 {
-  "name": "components",
+  "name": "@mozilla-frontend-infra/components",
   "version": "1.0.0",
   "description": "Mozilla Front End Infra Shareable React Components",
-  "repository": "https://github.com/mozilla-frontend-infra/components",
+  "repository": "mozilla-frontend-infra/components",
   "license": "MPL-2.0",
   "main": "build/index.js",
   "scripts": {
@@ -48,5 +48,8 @@
     "react-codemirror2": "^5.1.0",
     "react-router-dom": "^4.3.1",
     "redbox-react": "^1.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mozilla-frontend-infra/components/issues"
   }
 }

@@ -6,7 +6,6 @@ import linkAttributes from 'markdown-it-link-attributes';
 import highlighter from 'markdown-it-highlightjs';
 import { withStyles } from '@material-ui/core/styles';
 import 'highlight.js/styles/atom-one-dark.css';
-import withTheme from '../../utils/withTheme';
 
 const markdown = parser({ linkify: true });
 
@@ -18,7 +17,6 @@ markdown.use(linkAttributes, {
   },
 });
 
-@withTheme
 @withStyles(theme => ({
   root: {
     fontFamily: theme.typography.fontFamily,
@@ -31,7 +29,7 @@ markdown.use(linkAttributes, {
       position: 'absolute',
     },
     '& pre, & pre[class*="language-"]': {
-      margin: `${theme.spacing.triple}px 0`,
+      margin: `${3 * theme.spacing.unit}px 0`,
       padding: '12px 18px',
       backgroundColor: theme.palette.background.paper,
       borderRadius: 3,
@@ -137,16 +135,16 @@ markdown.use(linkAttributes, {
     },
     '& td': {
       borderBottom: `1px solid ${theme.palette.divider}`,
-      padding: `${theme.spacing.unit}px ${theme.spacing.double}px ${
+      padding: `${theme.spacing.unit}px ${2 * theme.spacing.unit}px ${
         theme.spacing.unit
       }px ${theme.spacing.unit}px`,
       textAlign: 'left',
     },
     '& td:last-child': {
-      paddingRight: theme.spacing.triple,
+      paddingRight: 3 * theme.spacing.unit,
     },
     '& td compact': {
-      paddingRight: theme.spacing.triple,
+      paddingRight: 3 * theme.spacing.unit,
     },
     '& td code': {
       fontSize: 13,
@@ -160,7 +158,7 @@ markdown.use(linkAttributes, {
       textAlign: 'left',
     },
     '& th:last-child': {
-      paddingRight: theme.spacing.triple,
+      paddingRight: 3 * theme.spacing.unit,
     },
     '& tr': {
       height: 48,
@@ -174,8 +172,8 @@ markdown.use(linkAttributes, {
     '& blockquote': {
       borderLeft: `5px solid ${theme.palette.text.hint}`,
       backgroundColor: theme.palette.background.paper,
-      padding: `${theme.spacing.unit / 2}px ${theme.spacing.triple}px`,
-      margin: `${theme.spacing.triple}px 0`,
+      padding: `${theme.spacing.unit / 2}px ${3 * theme.spacing.unit}px`,
+      margin: `${3 * theme.spacing.unit}px 0`,
     },
     '& a, & a code': {
       // Style taken from the Link component

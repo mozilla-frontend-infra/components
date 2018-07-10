@@ -12,51 +12,52 @@ import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 import CloseIcon from 'mdi-react/CloseIcon';
 import ErrorBox from './ErrorBox';
 import Markdown from '../Markdown';
-import withTheme from '../../utils/withTheme';
 
-@withTheme
-@withStyles(theme => ({
-  panel: {
-    marginBottom: theme.spacing.triple,
-  },
-  paper: {
-    padding: `0 ${theme.spacing.double}px`,
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  pad: {
-    paddingTop: 9,
-    paddingBottom: 9,
-  },
-  error: {
-    backgroundColor: theme.palette.error.dark,
-    borderColor: theme.palette.error.light,
-  },
-  warning: {
-    backgroundColor: theme.palette.warning.dark,
-    borderColor: theme.palette.warning.light,
-    '& svg': {
-      fill: theme.palette.warning.contrastText,
+@withStyles(
+  theme => ({
+    panel: {
+      marginBottom: 3 * theme.spacing.unit,
     },
-  },
-  errorText: {
-    color: theme.palette.error.contrastText,
-  },
-  warningText: {
-    color: theme.palette.warning.contrastText,
-    '& code': {
-      color: lighten(theme.palette.warning.contrastText, 0.2),
-      fontWeight: 'bold',
+    paper: {
+      padding: `0 ${2 * theme.spacing.unit}px`,
+      display: 'flex',
+      justifyContent: 'space-between',
     },
-  },
-  disabled: {
-    opacity: 1,
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-}))
+    pad: {
+      paddingTop: 9,
+      paddingBottom: 9,
+    },
+    error: {
+      backgroundColor: theme.palette.error.dark,
+      borderColor: theme.palette.error.light,
+    },
+    warning: {
+      backgroundColor: theme.palette.warning.dark,
+      borderColor: theme.palette.warning.light,
+      '& svg': {
+        fill: theme.palette.warning.contrastText,
+      },
+    },
+    errorText: {
+      color: theme.palette.error.contrastText,
+    },
+    warningText: {
+      color: theme.palette.warning.contrastText,
+      '& code': {
+        color: lighten(theme.palette.warning.contrastText, 0.2),
+        fontWeight: 'bold',
+      },
+    },
+    disabled: {
+      opacity: 1,
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(15),
+      fontWeight: theme.typography.fontWeightRegular,
+    },
+  }),
+  { withTheme: true }
+)
 /**
  * Render an error in a panel. Will be expandable display stack traces
  * when in development
@@ -82,7 +83,7 @@ export default class ErrorPanel extends Component {
   };
 
   render() {
-    const { classes, className, error, warning, onClose } = this.props;
+    const { theme, classes, className, error, warning, onClose } = this.props;
     const showStack =
       process.env.NODE_ENV === 'development' && error instanceof Error;
     const markdown = (
@@ -95,6 +96,7 @@ export default class ErrorPanel extends Component {
         {typeof error === 'string' ? error : error.message}
       </Markdown>
     );
+    const iconColor = theme.palette[warning ? 'warning' : 'error'].contrastText;
 
     if (!showStack) {
       return (
@@ -111,7 +113,7 @@ export default class ErrorPanel extends Component {
           {markdown}
           {onClose && (
             <IconButton onClick={onClose}>
-              <CloseIcon />
+              <CloseIcon color={iconColor} />
             </IconButton>
           )}
         </Paper>
@@ -131,7 +133,7 @@ export default class ErrorPanel extends Component {
         disabled={!showStack}>
         <ExpansionPanelSummary
           classes={{ disabled: classes.disabled }}
-          expandIcon={<ChevronDownIcon />}>
+          expandIcon={<ChevronDownIcon color={iconColor} />}>
           {markdown}
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>

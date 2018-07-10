@@ -24,19 +24,6 @@
 }
 
 /*
-  The purpose of defining class stages is to
-  re-render once a stage has been met. We start
-  with the minimal default stage of sans-serif,
-  and progressively re-render.
-*/
-html, body {
-  font-family: sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/*
   The defined stages now modify the display of
   elements once they are loaded.
 */

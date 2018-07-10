@@ -3,9 +3,7 @@ import { bool, node, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import withTheme from '../../utils/withTheme';
 
-@withTheme
 @withStyles(theme => ({
   dense: {
     minHeight: 20,

@@ -57,17 +57,25 @@ const theme = createMuiTheme({
     caption: Roboto400,
     button: Roboto500,
   },
-  spacing: {
-    unit: 8,
-    double: 16,
-    triple: 24,
-    quad: 32,
-  },
 });
 
 export default {
   ...theme,
   styleguide: {
+    StyleGuide: {
+      /*
+        The purpose of defining class stages is to
+        re-render once a stage has been met. We start
+        with the minimal default stage of sans-serif,
+        and progressively re-render.
+      */
+      '@global body': {
+        fontFamily: 'sans-serif',
+        fontWeight: 400,
+        WebkitFontSmoothing: 'antialiased',
+        color: 'rgba(255, 255, 255, 0.7)',
+      },
+    },
     fontFamily: {
       base: theme.typography.fontFamily,
     },

@@ -17,6 +17,9 @@ module.exports = {
     ['neutrino-preset-mozilla-frontend-infra/styleguide', {
       components: 'src/components/**/index.jsx',
       theme: theme.styleguide,
+      styles: {
+        StyleGuide: theme.StyleGuide,
+      },
       styleguideComponents: {
         Wrapper: join(__dirname, 'src/styleguide/ThemeWrapper.jsx'),
         StyleGuideRenderer: join(__dirname, 'src/styleguide/StyleGuideRenderer.jsx'),

@@ -9,7 +9,7 @@
     "changelog": "auto-changelog",
     "start": "neutrino styleguide:start",
     "build": "neutrino build",
-    "prepare": "neutrino lint && neutrino build",
+    "prepare": "neutrino build",
     "deploy": "neutrino styleguide:build && gh-pages --remote upstream -d styleguide",
     "lint": "neutrino lint",
     "update:authors": "scripts/authors"

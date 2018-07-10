@@ -1,11 +1,9 @@
 import { PureComponent } from 'react';
-import { bool } from 'prop-types';
+import { bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import withTheme from '../../utils/withTheme';
 
-@withTheme
 @withStyles({
   center: {
     textAlign: 'center',
@@ -21,16 +19,22 @@ export default class Spinner extends PureComponent {
      * block-centered container.
      */
     loading: bool,
+    /**
+     * The color of the component.
+     * It supports those theme colors that make sense for this component.
+     */
+    color: oneOf(['primary', 'secondary', 'inherit']),
   };
 
   static defaultProps = {
     loading: false,
+    color: 'primary',
   };
 
   render() {
-    const { loading, classes, className, ...props } = this.props;
+    const { color, loading, classes, className, ...props } = this.props;
     const progress = (
-      <CircularProgress color="primary" className={className} {...props} />
+      <CircularProgress color={color} className={className} {...props} />
     );
 
     return loading ? (

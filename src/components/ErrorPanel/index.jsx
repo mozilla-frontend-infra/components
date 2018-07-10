@@ -76,17 +76,30 @@ export default class ErrorPanel extends Component {
     onClose: func,
     /** The CSS class name of the wrapper element */
     className: string,
+    /**
+     * If false, the error will show its stack trace in addition
+     * to the error message. For security purposes,
+     * it is recommended to disable stack traces in production. */
+    disableStackTrace: bool,
   };
 
   static defaultProps = {
     warning: false,
     className: null,
+    disableStackTrace: true,
   };
 
   render() {
-    const { theme, classes, className, error, warning, onClose } = this.props;
-    const showStack =
-      process.env.NODE_ENV === 'development' && error instanceof Error;
+    const {
+      theme,
+      classes,
+      className,
+      disableStackTrace,
+      error,
+      warning,
+      onClose,
+    } = this.props;
+    const showStack = !disableStackTrace && error instanceof Error;
     const markdown = (
       <Markdown
         className={classNames({

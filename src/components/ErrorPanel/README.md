@@ -7,7 +7,7 @@ String message:
 Exception, in development:
 
 ```js
-<ErrorPanel error={new Error('Something bad happened')} />
+<ErrorPanel disableStackTrace={false} error={new Error('Something bad happened')} />
 ```
 
 Warning styling:

@@ -18,6 +18,7 @@ module.exports = {
       components: 'src/components/**/index.jsx',
       theme: theme.styleguide,
       styleguideComponents: {
+        Wrapper: join(__dirname, 'src/styleguide/ThemeWrapper.jsx'),
         StyleGuideRenderer: join(__dirname, 'src/styleguide/StyleGuideRenderer.jsx'),
       },
     }],

@@ -12,6 +12,7 @@ import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 import CloseIcon from 'mdi-react/CloseIcon';
 import ErrorBox from './ErrorBox';
 import Markdown from '../Markdown';
+import palette from '../../utils/palette';
 
 @withStyles(
   theme => ({
@@ -32,19 +33,19 @@ import Markdown from '../Markdown';
       borderColor: theme.palette.error.light,
     },
     warning: {
-      backgroundColor: theme.palette.warning.dark,
-      borderColor: theme.palette.warning.light,
+      backgroundColor: palette.warning.dark,
+      borderColor: palette.warning.light,
       '& svg': {
-        fill: theme.palette.warning.contrastText,
+        fill: palette.warning.contrastText,
       },
     },
     errorText: {
       color: theme.palette.error.contrastText,
     },
     warningText: {
-      color: theme.palette.warning.contrastText,
+      color: palette.warning.contrastText,
       '& code': {
-        color: lighten(theme.palette.warning.contrastText, 0.2),
+        color: lighten(palette.warning.contrastText, 0.2),
         fontWeight: 'bold',
       },
     },
@@ -96,7 +97,9 @@ export default class ErrorPanel extends Component {
         {typeof error === 'string' ? error : error.message}
       </Markdown>
     );
-    const iconColor = theme.palette[warning ? 'warning' : 'error'].contrastText;
+    const iconColor = warning
+      ? palette.warning.contrastText
+      : theme.palette.error.contrastText;
 
     if (!showStack) {
       return (

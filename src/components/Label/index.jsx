@@ -3,6 +3,7 @@ import { bool, node, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import palette from '../../utils/palette';
 
 @withStyles(theme => ({
   dense: {
@@ -21,12 +22,12 @@ import Button from '@material-ui/core/Button';
     color: `${theme.palette.error.contrastText} !important`,
   },
   success: {
-    backgroundColor: `${theme.palette.success[700]} !important`,
-    color: `${theme.palette.success.contrastText} !important`,
+    backgroundColor: `${palette.success.dark} !important`,
+    color: `${palette.success.contrastText} !important`,
   },
   warning: {
-    backgroundColor: `${theme.palette.warning[700]} !important`,
-    color: `${theme.palette.warning.contrastText} !important`,
+    backgroundColor: `${palette.warning.dark} !important`,
+    color: `${palette.warning.contrastText} !important`,
   },
   default: {
     backgroundColor: `${theme.palette.grey[700]} !important`,
@@ -35,8 +36,8 @@ import Button from '@material-ui/core/Button';
     )} !important`,
   },
   info: {
-    backgroundColor: `${theme.palette.info[700]} !important`,
-    color: `${theme.palette.info.contrastText} !important`,
+    backgroundColor: `${palette.info[700]} !important`,
+    color: `${palette.info.contrastText} !important`,
   },
 }))
 /**

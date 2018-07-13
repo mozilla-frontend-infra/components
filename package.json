@@ -27,12 +27,12 @@
     "neutrino-preset-mozilla-frontend-infra": "^4.1.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-fout-stager": "^3.0.0",
-    "typeface-roboto": "^0.0.54",
     "verdaccio": "^3.2.0"
   },
   "peerDependencies": {
-    "@material-ui/core": "^1.3.1"
+    "@material-ui/core": "^1.3.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -46,8 +46,10 @@
     "mdi-react": "^4.0.0",
     "prop-types": "^15.6.2",
     "react-codemirror2": "^5.1.0",
+    "react-fout-stager": "^3.0.0",
     "react-router-dom": "^4.3.1",
-    "redbox-react": "^1.6.0"
+    "redbox-react": "^1.6.0",
+    "typeface-roboto": "^0.0.54"
   },
   "bugs": {
     "url": "https://github.com/mozilla-frontend-infra/components/issues"

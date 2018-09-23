@@ -9,7 +9,6 @@ import CardContent from '@material-ui/core/CardContent';
     width: '100%',
     color: 'white',
     textAlign: 'left',
-    fontSize: 16,
     lineHeight: 1.2,
     overflow: 'auto',
   },

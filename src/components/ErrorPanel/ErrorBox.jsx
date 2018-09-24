@@ -13,12 +13,6 @@ import CardContent from '@material-ui/core/CardContent';
     lineHeight: 1.2,
     overflow: 'auto',
   },
-  stack: {
-    fontFamily: 'monospace',
-  },
-  frame: {
-    marginTop: '1em',
-  },
 })
 export default class ErrorBox extends RedBoxError {
   static propTypes = {

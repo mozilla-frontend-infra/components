@@ -10,7 +10,7 @@
     "start": "neutrino styleguide:start",
     "build": "neutrino build",
     "lint": "neutrino lint",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn && yarn build",
     "update:authors": "scripts/authors",
     "styleguide:build": "neutrino styleguide:build",
     "release": "dotenv semantic-release",

@@ -177,8 +177,8 @@ markdown.use(linkAttributes, {
     },
     '& a, & a code': {
       // Style taken from the Link component
-      color: theme.palette.secondary.main,
-      textDecoration: 'none',
+      color: theme.palette.error.contrastText,
+      textDecoration: 'underline',
       '&:hover': {
         textDecoration: 'underline',
       },

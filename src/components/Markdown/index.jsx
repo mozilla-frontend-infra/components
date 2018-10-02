@@ -178,10 +178,6 @@ markdown.use(linkAttributes, {
     '& a, & a code': {
       // Style taken from the Link component
       color: theme.palette.error.contrastText,
-      textDecoration: 'underline',
-      '&:hover': {
-        textDecoration: 'underline',
-      },
     },
     '& img': {
       maxWidth: '100%',

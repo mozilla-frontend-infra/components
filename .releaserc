@@ -1,6 +1,13 @@
 {
   "pkgRoot": "build",
-  "analyzeCommits": {
-    "preset": "eslint"
-  }
+  "preset": "eslint",
+  "verifyConditions": ["@semantic-release/changelog", "@semantic-release/npm", "@semantic-release/git", "@semantic-release/github"],
+  "prepare": [
+    {
+      "path": "@semantic-release/changelog",
+      "changelogFile": "build/CHANGELOG.md"
+    },
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
 }

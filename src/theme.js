@@ -18,6 +18,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    useNextVariants: true,
     ...Roboto400,
     display4: Roboto300,
     display3: Roboto400,

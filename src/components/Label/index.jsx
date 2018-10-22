@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { bool, node, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -64,6 +64,7 @@ export default class Label extends Component {
 
   static defaultProps = {
     mini: false,
+    className: null,
   };
 
   render() {
@@ -80,7 +81,8 @@ export default class Label extends Component {
           sizeSmall: classes.dense,
           disabled: classNames(classes[status], classes.disabled),
         }}
-        {...props}>
+        {...props}
+      >
         {children}
       </Button>
     );

@@ -112,8 +112,7 @@ export default class ErrorPanel extends Component {
           [classes.errorText]: !warning,
           [classes.warningText]: warning,
           [classes.pad]: !showStack,
-        })}
-      >
+        })}>
         {typeof error === 'string' ? error : error.message}
       </Markdown>
     );
@@ -132,8 +131,7 @@ export default class ErrorPanel extends Component {
               [classes.warning]: warning,
             },
             className
-          )}
-        >
+          )}>
           {markdown}
           {onClose && (
             <IconButton onClick={onClose}>
@@ -154,12 +152,10 @@ export default class ErrorPanel extends Component {
           },
           className
         )}
-        disabled={!showStack}
-      >
+        disabled={!showStack}>
         <ExpansionPanelSummary
           classes={{ disabled: classes.disabled }}
-          expandIcon={<ChevronDownIcon color={iconColor} />}
-        >
+          expandIcon={<ChevronDownIcon color={iconColor} />}>
           {markdown}
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>

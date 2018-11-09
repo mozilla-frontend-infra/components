@@ -1,12 +1,5 @@
-const fs = require('fs-extra');
 const { join } = require('path');
-
-require('@babel/register')({
-  presets: [require.resolve('@babel/preset-env')],
-  cache: false,
-});
-
-const theme = require('./src/theme').default;
+const theme = require('./src/theme');
 
 module.exports = {
   use: [
@@ -19,7 +12,7 @@ module.exports = {
         },
         emitWarning: process.env.NODE_ENV === 'development',
         baseConfig: {
-          extends: ['plugin:react/recommended', 'eslint-config-prettier'],
+          extends: ['plugin:react/recommended', 'prettier', 'prettier/react'],
         },
         plugins: ['prettier'],
         rules: {
@@ -56,7 +49,7 @@ module.exports = {
               singleQuote: true,
               trailingComma: 'es5',
               bracketSpacing: true,
-              jsxBracketSameLine: false,
+              jsxBracketSameLine: true,
             },
           ],
           'consistent-return': 'off',
@@ -71,7 +64,7 @@ module.exports = {
       babel: {
         plugins: [
           [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],
-          require.resolve('@babel/plugin-proposal-class-properties'),
+          [require.resolve('@babel/plugin-proposal-class-properties'), { loose: true }],
         ],
       },
     }],
@@ -94,12 +87,6 @@ module.exports = {
     (neutrino) => {
       if (process.env.NODE_ENV === 'development') {
         neutrino.config.module.rules.delete('lint');
-      }
-
-      if (process.env.NODE_ENV === 'production' && fs.existsSync('build')) {
-        ['package.json', 'logo.png', 'LICENSE', 'README.md', 'AUTHORS'].map(file => {
-          fs.copyFileSync(file, join(__dirname, `build/${file}`));
-        })
       }
     },
   ],

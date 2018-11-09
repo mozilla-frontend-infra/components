@@ -8,9 +8,8 @@
   "scripts": {
     "changelog": "auto-changelog",
     "start": "styleguidist server",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && scripts/copyFiles",
     "lint": "eslint --cache --format codeframe --ext js,jsx src",
-    "test": "echo \"Error: no test specified\" && exit 0",
     "update:authors": "scripts/authors",
     "styleguide:build": "styleguidist build",
     "semantic-release": "semantic-release"
@@ -18,8 +17,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
-    "@babel/preset-env": "^7.1.5",
-    "@babel/register": "^7.0.0",
     "@material-ui/core": "^3.3.0",
     "@neutrinojs/airbnb": "^9.0.0-beta.1",
     "@neutrinojs/react-components": "^9.0.0-beta.1",

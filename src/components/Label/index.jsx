@@ -81,8 +81,7 @@ export default class Label extends Component {
           sizeSmall: classes.dense,
           disabled: classNames(classes[status], classes.disabled),
         }}
-        {...props}
-      >
+        {...props}>
         {children}
       </Button>
     );

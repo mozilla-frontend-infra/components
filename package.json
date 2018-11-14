@@ -19,7 +19,6 @@
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@material-ui/core": "^3.3.0",
     "@mozilla-frontend-infra/react-lint": "^1.1.0",
-    "@neutrinojs/airbnb": "^9.0.0-beta.1",
     "@neutrinojs/react-components": "^9.0.0-beta.1",
     "@semantic-release/changelog": "^3.0.0",
     "@semantic-release/git": "^7.0.4",

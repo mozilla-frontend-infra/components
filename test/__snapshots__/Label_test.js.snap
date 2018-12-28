@@ -122,7 +122,7 @@ exports[`<Label /> should render correctly 1`] = `
               <span
                 className="MuiButton-label-10"
               >
-                foo
+                Foo
               </span>
             </button>
           </ButtonBase>

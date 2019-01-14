@@ -10,19 +10,19 @@ import 'codemirror/addon/lint/lint';
 CodeMirror.registerHelper('lint', 'json', text => {
   const found = [];
 
-  parser.parseError = function(str, hash) {
-    const loc = hash.loc;
+  parser.parseError = (str, hash) => {
+    const { loc } = hash;
 
     found.push({
       from: CodeMirror.Pos(loc.first_line - 1, loc.first_column),
       to: CodeMirror.Pos(loc.last_line - 1, loc.last_column),
-      message: str
+      message: str,
     });
   };
 
   try {
     parser.parse(text);
-  } catch(e) {
+  } catch (e) {
     // Do nothing
   }
 

@@ -35,6 +35,8 @@ module.exports = {
         neutrino.config.module.rules.delete('lint');
       }
 
+      console.log('yes');
+
       neutrino.config.module
         .rule('compile')
         .use('babel')
@@ -50,7 +52,7 @@ module.exports = {
         }))
     },
     ['@neutrinojs/jest', {
-      setupTestFrameworkScriptFile: '<rootDir>test/setupTests.js',
+      setupFilesAfterEnv: ['<rootDir>test/setupTests.js'],
       setupFiles: ['jest-prop-type-error'],
       snapshotSerializers: ["enzyme-to-json/serializer"],
     }],

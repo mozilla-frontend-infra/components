@@ -35,8 +35,6 @@ module.exports = {
         neutrino.config.module.rules.delete('lint');
       }
 
-      console.log('yes');
-
       neutrino.config.module
         .rule('compile')
         .use('babel')

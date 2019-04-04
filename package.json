@@ -1,6 +1,6 @@
 {
-  "name": "auth-react-component",
-  "version": "0.0.0-semantically-released",
+  "name": "keycloak-js-react",
+  "version": "0.0.0-development",
   "description": "React Components for Authentication",
   "repository": "httpsOmkar/auth-react-component",
   "license": "MPL-2.0",
@@ -33,27 +33,31 @@
     "gh-pages": "^2.0.1",
     "jest": "^24.7.0",
     "jest-prop-type-error": "^1.1.0",
+    "keycloak-js": "^5.0.0",
     "neutrino": "^9.0.0-rc.0",
     "prettier": "^1.14.3",
     "react": "^16.6.1",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.6.1",
     "react-styleguidist": "^7.3.11",
-    "semantic-release": "^15.9.16",
+    "rebound": "^0.1.0",
+    "semantic-release": "^15.13.3",
     "verdaccio": "^3.8.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
   "peerDependencies": {
+    "keycloak-js": "^5.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "keycloak-js": "^5.0.0",
+    "keyboardjs": "^2.5.1",
     "prop-types": "^15.6.2",
-    "react-use": "^7.3.1"
+    "react-use": "^7.3.1",
+    "rxjs": "^6.4.0"
   },
   "bugs": {
     "url": "https://github.com/httpsOmkar/auth-react-component/issues"

@@ -14,25 +14,25 @@
 
 ## Requirements
 
-* React, React DOM
+* React, React DOM, keycloak-js
 
 ## Getting started
 
 ```
 # If using Yarn:
-yarn add @mozilla-frontend-infra/components
+yarn add keycloak-js-react
 
 # If using npm:
-npm install --save @mozilla-frontend-infra/components
+npm install --save keycloak-js-react
 ```
 
 ### Import
 
 ```js
-import ErrorPanel from '@mozilla-frontend-infra/components/ErrorPanel';
+import KeycloakWrapper from 'keycloak-js-react/components/KeycloakWrapper';
 
 // using require
-const ErrorPanel = require('@mozilla-frontend-infra/components/ErrorPanel').default;
+const KeycloakWrapper = require('keycloak-js-react/components/KeycloakWrapper').default;
 ```
 
 ## Development and Contributing

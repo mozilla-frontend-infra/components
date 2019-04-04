@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { string, element, any, object, number } from 'prop-types';
-import { useAsync } from 'react-use';
 
 export const KeycloakContext = React.createContext();
 
@@ -18,11 +17,6 @@ export default class KeycloakWrapper extends Component {
     loadingElement: element.isRequired,
 
     /**
-     * Element which will render when the error is occurred
-     */
-    errorElement: element.isRequired,
-
-    /**
      * Child element to render
      */
     children: element.isRequired,
@@ -38,6 +32,11 @@ export default class KeycloakWrapper extends Component {
     keycloakOptions: object.isRequired,
 
     /**
+     * Render when any error is there
+     */
+    errorChildren: element,
+
+    /**
      * Update token in this interval
      */
     tokenUpdateInterval: number.isRequired,
@@ -49,18 +48,24 @@ export default class KeycloakWrapper extends Component {
     children: null,
     keycloak: null,
     tokenUpdateInterval: null,
+    errorChildren: props => <p>Error {props.error}</p>,
   };
 
   state = {
-    profile: null,
     keycloakPromise: null,
   };
 
   /**
-   *
+   * @private
+   * Interval id
    */
   refreshIntervalId;
 
+  /**
+   * @private
+   * Keycloak promise
+   * @returns {Promise<any>}
+   */
   keycloakPromise() {
     const { keycloak } = this.props;
 
@@ -88,6 +93,7 @@ export default class KeycloakWrapper extends Component {
   }
 
   /**
+   * @private
    * Load the keycloak profile
    * @returns {Promise<any>}
    */
@@ -102,11 +108,15 @@ export default class KeycloakWrapper extends Component {
     });
   }
 
+  // TODO: FIX THIS
   componentDidMount() {
-    // Set keycloak profile
-    this.setState({
-      keycloakPromise: useAsync(this.keycloakPromise()),
-    });
+    this.keycloakPromise()
+      .then(docs => {
+        this.setState({ keycloakPromise: docs });
+      })
+      .catch(() => {
+        // TODO: this.setState({ error: e });
+      });
   }
 
   componentWillUnmount() {
@@ -116,23 +126,17 @@ export default class KeycloakWrapper extends Component {
     }
   }
 
+  /**
+   * Render the element
+   * @returns {*}
+   */
   render() {
-    const { children, loadingElement } = this.props;
     const { keycloakPromise } = this.state;
-    let child;
-
-    if (keycloakPromise.loading) {
-      child = loadingElement;
-    } else if (keycloakPromise.error) {
-      child = <p>Error occurred {keycloakPromise.error}</p>;
-    } else {
-      child = children;
-    }
+    const { children } = this.props;
 
     return (
-      <KeycloakContext.Provider
-        value={{ profile: this.keycloakProfilePromise(), ...this.state }}>
-        {child}
+      <KeycloakContext.Provider value={this.state}>
+        <div>{keycloakPromise && children}</div>
       </KeycloakContext.Provider>
     );
   }

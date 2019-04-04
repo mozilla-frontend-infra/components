@@ -1,5 +1,4 @@
 const { join } = require('path');
-const theme = require('./src/theme');
 
 const env = process.env.NODE_ENV;
 const isEnvProduction = env === 'production';
@@ -19,13 +18,8 @@ module.exports = {
         webpackConfig: neutrino.config.toConfig(),
         components: 'src/components/**/index.jsx',
         skipComponentsWithoutExample: true,
-        theme: theme.styleguide,
-        styles: {
-          StyleGuide: theme.styleguide.StyleGuide,
-        },
         usageMode: 'expand',
         styleguideComponents: {
-          Wrapper: join(__dirname, 'src/styleguide/ThemeWrapper.jsx'),
           StyleGuideRenderer: join(__dirname, 'src/styleguide/StyleGuideRenderer.jsx'),
         },
       }));

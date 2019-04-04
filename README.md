@@ -3,13 +3,7 @@
     <img src="https://raw.githubusercontent.com/mozilla-frontend-infra/components/master/logo.png" alt="Logo" width=72 height=72>
   </a>
 
-  <h3 align="center">Components</h3>
-
-  <p align="center">
-    Shareable React Components
-    <br>
-    <a href="https://mozilla-frontend-infra-components.netlify.com"><strong>Explore Components styleguide</strong></a>
-  </p>
+  <h3 align="center">Auth Components</h3>
 </p>
 
 <br>
@@ -20,7 +14,6 @@
 
 ## Requirements
 
-* `@material-ui/core` v3+
 * React, React DOM
 
 ## Getting started
@@ -65,10 +58,6 @@ documentation is still a work in progress, so file an issue or submit a PR to as
 Thanks!
 
 ## Thanks
-
-[![BrowserStack](https://www.browserstack.com/images/mail/browserstack-logo-footer.png)](https://www.browserstack.com/)
-
-Thank you to [BrowserStack](https://www.browserstack.com/) for providing the infrastructure that allows us to test in real browsers.
 
 [npm-image]: https://img.shields.io/npm/v/@mozilla-frontend-infra/components.svg
 [npm-url]: https://www.npmjs.com/package/@mozilla-frontend-infra/components

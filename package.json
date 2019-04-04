@@ -53,11 +53,8 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "keyboardjs": "^2.5.1",
-    "prop-types": "^15.6.2",
-    "react-use": "^7.3.1",
-    "rxjs": "^6.4.0"
+    "prop-types": "^15.6.2"
   },
   "bugs": {
     "url": "https://github.com/httpsOmkar/auth-react-component/issues"

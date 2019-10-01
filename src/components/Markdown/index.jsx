@@ -173,7 +173,10 @@ markdown.use(linkAttributes, {
     },
     '& a, & a code': {
       // Style taken from the Link component
-      color: theme.palette.error.contrastText,
+      color:
+        theme.palette.common[
+          theme.palette.type === 'light' ? 'black' : 'white'
+        ],
     },
     '& img': {
       maxWidth: '100%',

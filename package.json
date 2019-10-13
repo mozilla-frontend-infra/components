@@ -58,7 +58,6 @@
     "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30000999",
     "classnames": "^2.2.6",
     "codemirror": "^5.39.0",
     "error-stack-parser": "^2.0.2",

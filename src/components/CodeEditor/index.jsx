@@ -52,11 +52,11 @@ export default class CodeEditor extends Component {
       mode: 'application/json',
       theme: 'material',
       indentWithTabs: false,
+      extraKeys: {Tab: false,},
       gutters: ['CodeMirror-lint-markers'],
       lineNumbers: true,
       ...options,
     };
-
     return (
       <Controlled
         className={classNames(classes.root, className)}

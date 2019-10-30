@@ -132,9 +132,9 @@ markdown.use(linkAttributes, {
     },
     '& td': {
       borderBottom: `1px solid ${theme.palette.divider}`,
-      padding: `${theme.spacing(1)}px ${2 * theme.spacing(1)}px ${
-        theme.spacing(1)
-      }px ${theme.spacing(1)}px`,
+      padding: `${theme.spacing(1)}px ${2 * theme.spacing(1)}px ${theme.spacing(
+        1
+      )}px ${theme.spacing(1)}px`,
       textAlign: 'left',
     },
     '& td:last-child': {

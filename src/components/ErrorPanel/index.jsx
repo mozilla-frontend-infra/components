@@ -20,10 +20,10 @@ import palette from '../../utils/palette';
 
     return {
       panel: {
-        marginBottom: 3 * theme.spacing.unit,
+        marginBottom: 3 * theme.spacing(1),
       },
       paper: {
-        padding: `0 ${2 * theme.spacing.unit}px`,
+        padding: `0 ${2 * theme.spacing(1)}px`,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
@@ -67,6 +67,10 @@ import palette from '../../utils/palette';
       heading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
+      },
+      expandIcon: {
+        right: '8px',
+        position: 'absolute',
       },
     };
   },
@@ -164,7 +168,11 @@ export default class ErrorPanel extends Component {
         )}
         disabled={!showStack}>
         <ExpansionPanelSummary
-          classes={{ disabled: classes.disabled }}
+          classes={{
+            disabled: classes.disabled,
+            expandIcon: classes.expandIcon,
+          }}
+          IconButtonProps={{ edge: false }}
           expandIcon={<ChevronDownIcon color={iconColor} />}>
           {markdown}
         </ExpansionPanelSummary>

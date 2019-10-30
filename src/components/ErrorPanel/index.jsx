@@ -68,10 +68,6 @@ import palette from '../../utils/palette';
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
       },
-      expandIcon: {
-        right: '8px',
-        position: 'absolute',
-      },
     };
   },
   { withTheme: true }
@@ -168,11 +164,7 @@ export default class ErrorPanel extends Component {
         )}
         disabled={!showStack}>
         <ExpansionPanelSummary
-          classes={{
-            disabled: classes.disabled,
-            expandIcon: classes.expandIcon,
-          }}
-          IconButtonProps={{ edge: false }}
+          classes={{ disabled: classes.disabled }}
           expandIcon={<ChevronDownIcon color={iconColor} />}>
           {markdown}
         </ExpansionPanelSummary>

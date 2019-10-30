@@ -31,13 +31,6 @@ const theme = createMuiTheme({
     caption: Roboto400,
     button: Roboto500,
   },
-  overrides: {
-    MuiButton: {
-      root: {
-        lineHeight: 1.5,
-      },
-    },
-  },
 });
 
 module.exports = {

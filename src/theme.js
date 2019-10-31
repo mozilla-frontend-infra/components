@@ -47,7 +47,6 @@ module.exports = {
         fontFamily: 'sans-serif',
         fontWeight: 400,
         WebkitFontSmoothing: 'antialiased',
-        color: 'rgba(255, 255, 255, 0.7)',
       },
     },
     fontFamily: {

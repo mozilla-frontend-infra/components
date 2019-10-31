@@ -3,7 +3,6 @@ import { string } from 'prop-types';
 import { getLanguage, highlight } from 'highlight.js';
 import classNames from 'classnames';
 import 'highlight.js/styles/atom-one-dark.css';
-import { withStyles } from '@material-ui/core/styles';
 
 const validLanguage = (props, propName) => {
   const language = props[propName];
@@ -12,11 +11,6 @@ const validLanguage = (props, propName) => {
     return new Error(`Language '${language}' not supported by highlight.js`);
   }
 };
-@withStyles({
-  textCode: {
-    color: 'black',
-  },
-})
 
 /**
  * Render children as syntax-highlighted monospace code.
@@ -40,18 +34,13 @@ export default class Code extends Component {
   };
 
   render() {
-    const { children, language, className, classes, ...props } = this.props;
+    const { children, language, className, ...props } = this.props;
     const code = highlight(language, children, true).value;
 
     /* eslint-disable react/no-danger */
     return (
       <pre className={classNames(`language-${language}`, className)} {...props}>
-        {code && (
-          <code
-            className={classes.textCode}
-            dangerouslySetInnerHTML={{ __html: code }}
-          />
-        )}
+        {code && <code dangerouslySetInnerHTML={{ __html: code }} />}
       </pre>
     );
     /* eslint-enable react/no-danger */

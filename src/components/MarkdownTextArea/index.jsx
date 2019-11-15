@@ -33,6 +33,7 @@ import pickClassName from '../../utils/pickClassName';
     markdown: {
       '& > :first-child': {
         marginTop: '0',
+        fontSize: theme.typography.body1.fontSize,
       },
     },
   };

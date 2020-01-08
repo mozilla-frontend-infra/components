@@ -16,8 +16,8 @@ import './json-lint';
 @withStyles({
   root: {
     width: '100%',
-    '& .CodeMirror-placeholder': {
-      color: '#656469 !important',
+    '& pre.CodeMirror-placeholder': {
+      color: '#999',
     },
   },
 })

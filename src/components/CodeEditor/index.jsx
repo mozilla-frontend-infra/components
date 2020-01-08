@@ -18,7 +18,7 @@ import './json-lint';
     width: '100%',
     '& .CodeMirror-placeholder': {
       color: '#656469 !important',
-    }
+    },
   },
 })
 /** Render an editor.

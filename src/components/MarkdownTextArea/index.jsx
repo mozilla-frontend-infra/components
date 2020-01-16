@@ -68,7 +68,7 @@ export default class MarkdownTextArea extends Component {
     /**
      * Properties applied to the Markdown component.
      */
-    markdownprops: object,
+    markdownProps: object,
   };
 
   static defaultProps = {
@@ -77,7 +77,7 @@ export default class MarkdownTextArea extends Component {
     placeholder: null,
     defaultTabIndex: 0,
     rows: 5,
-    markdownprops: null,
+    markdownProps: null,
   };
 
   constructor(props) {
@@ -107,8 +107,14 @@ export default class MarkdownTextArea extends Component {
   };
 
   render() {
-    const { classes, rows, markdownprops } = this.props;
-    const { onChange, defaultTabIndex, ...props } = this.props;
+    const {
+      classes,
+      rows,
+      markdownProps,
+      onChange,
+      defaultTabIndex,
+      ...props
+    } = this.props;
     const { tabIndex, value } = this.state;
     const isPreview = tabIndex === 1;
 
@@ -136,10 +142,10 @@ export default class MarkdownTextArea extends Component {
           )}
           {isPreview && (
             <Markdown
-              {...markdownprops}
+              {...markdownProps}
               className={classNames(
                 classes.markdown,
-                pickClassName(markdownprops)
+                pickClassName(markdownProps)
               )}>
               {props.value || value || 'Nothing to Preview'}
             </Markdown>

@@ -11,7 +11,7 @@ exports[`<MarkdownTextArea /> should render correctly 1`] = `
     }
   }
   defaultTabIndex={0}
-  markdownprops={null}
+  markdownProps={null}
   onChange={null}
   placeholder={null}
   rows={5}

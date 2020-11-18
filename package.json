@@ -46,7 +46,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.10.2",
     "react-styleguidist": "^7.3.11",
-    "semantic-release": "^15.9.16",
+    "semantic-release": "^17.2.3",
     "verdaccio": "^3.13.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
